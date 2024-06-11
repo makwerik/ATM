@@ -14,14 +14,11 @@ public class ATM {
         // String.valueOf(enteredPin) - преобразовываем в строку значение
         if ( String.valueOf(enteredPin).length() < 4){
             System.out.println("PIN-код меньше 4 цифр");
-            return;
         }else if(String.valueOf(enteredPin).length() > 4){
             System.out.println("PIN-код больше 4 цифр");
-            return;
         }else{
             if (enteredPin != pincode) {
                 System.out.println("Вход запрещён. Неверный PIN-код. ");
-                return;
             }else {
                 System.out.println("Успешный вход");
 
