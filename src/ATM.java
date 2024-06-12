@@ -38,10 +38,10 @@ public class ATM {
 
                     switch (choice){
                         case 1:
-                            System.out.println("В разработке");
+                            checkBalance();
                             break;
                         case 2:
-                            System.out.println("В разработке");
+                            withDraw(scanner);
                             break;
                         case 3:
                             System.out.println("В разработке");
@@ -57,10 +57,27 @@ public class ATM {
                             System.out.println("Неверный выбор. Поробуйте снова!");
                     }
                 }
+                scanner.close();
             }
         }
 
 
+    }
+
+    public static void checkBalance(){
+        System.out.println("Ваш текущий баланс: " + balance + " Руб.");
+    }
+
+    public static void withDraw(Scanner scanner){
+        System.out.print("Введите сумму для снятия: ");
+        int withdraw = scanner.nextInt();
+
+        if (withdraw > balance){
+            System.out.println("Недостаточно средств на балансе");
+        }else if (withdraw <= balance){
+            balance = balance - withdraw;
+            System.out.println("Сумма: " + withdraw + "руб. снята. Ваш текущий баланс: " + balance + "руб.");
+        }
     }
 
 }
