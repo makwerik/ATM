@@ -47,7 +47,7 @@ public class ATM {
                             pullMoney(scanner);
                             break;
                         case 4:
-                            System.out.println("В разработке");
+                            milLion();
                             break;
                         case 5:
                             System.out.println("Спасибо за то, что воспользовались нашим банкоматом!");
@@ -90,5 +90,12 @@ public class ATM {
             System.out.println("Неверно!");
         }
     }
+
+    public static void milLion(){
+        int million = 1000000;
+        balance = balance + million;
+        System.out.println("Теперь вы миллионер.\nНа ваш счёт поступило: " + million + "руб." );
+    }
+
 
 }
