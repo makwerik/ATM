@@ -44,7 +44,7 @@ public class ATM {
                             withDraw(scanner);
                             break;
                         case 3:
-                            System.out.println("В разработке");
+                            pullMoney(scanner);
                             break;
                         case 4:
                             System.out.println("В разработке");
@@ -77,6 +77,17 @@ public class ATM {
         }else if (withdraw <= balance){
             balance = balance - withdraw;
             System.out.println("Сумма: " + withdraw + "руб. снята. Ваш текущий баланс: " + balance + "руб.");
+        }
+    }
+
+    public static void pullMoney(Scanner scanner){
+        System.out.print("Какую сумму вы собираетесь внести: ");
+        int pull = scanner.nextInt();
+        if (pull >= 0){
+            balance = pull + balance;
+            System.out.println("Вы внесли " + pull + "руб. Ваш текущий баланс: " + balance);
+        }else {
+            System.out.println("Неверно!");
         }
     }
 
